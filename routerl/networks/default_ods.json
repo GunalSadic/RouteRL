@@ -61,6 +61,10 @@
     "manhattan": {
         "origins": ["-1087048475#0"],
         "destinations": ["587061846#4"]
+    },
+    "bucharest": {
+        "origins" : ["236194081#0"],
+        "destinations" : ["894313713#0"]
     }
 
 }

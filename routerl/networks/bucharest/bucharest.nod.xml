@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-12-07 18:59:52 by Eclipse SUMO netconvert Version 1.18.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="bucharest.net.xml"/>
+    </input>
+
+    <output>
+        <plain-output-prefix value="bucharest"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<nodes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <location netOffset="-428439.51,-4919554.83" convBoundary="0.00,0.00,2518.43,928.55" origBoundary="26.086093,44.366053,26.145688,44.481060" projParameter="+proj=utm +zone=35 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <node id="10961755188" x="242.85" y="336.39" type="traffic_light" tl="GS_10961755188"/>
+    <node id="11189079178" x="1120.68" y="743.19" type="priority"/>
+    <node id="11360905560" x="886.87" y="792.26" type="priority"/>
+    <node id="11612247571" x="2040.73" y="741.70" type="priority"/>
+    <node id="11701511763" x="1105.01" y="512.91" type="priority"/>
+    <node id="11701511764" x="1107.16" y="508.05" type="priority"/>
+    <node id="11701511765" x="1117.31" y="508.22" type="priority"/>
+    <node id="11701512676" x="1119.31" y="512.80" type="priority"/>
+    <node id="11701520688" x="1484.67" y="332.68" type="priority"/>
+    <node id="11701520689" x="1463.05" y="337.17" type="priority"/>
+    <node id="11701520690" x="1474.31" y="345.12" type="priority"/>
+    <node id="11701520695" x="1475.35" y="323.19" type="priority"/>
+    <node id="11701520696" x="1484.55" y="336.27" type="priority"/>
+    <node id="11701520698" x="1462.83" y="331.96" type="priority"/>
+    <node id="11701832085" x="1114.74" y="519.80" type="priority"/>
+    <node id="11701832842" x="1559.69" y="501.32" type="priority"/>
+    <node id="11701832845" x="1552.82" y="498.10" type="priority"/>
+    <node id="11701832850" x="1557.37" y="513.51" type="priority"/>
+    <node id="11701832855" x="1546.20" y="501.80" type="priority"/>
+    <node id="12909016981" x="1152.75" y="753.09" type="priority"/>
+    <node id="129516014" x="921.89" y="779.31" type="priority"/>
+    <node id="13122088290" x="204.37" y="339.89" type="dead_end"/>
+    <node id="134860939" x="835.45" y="708.17" type="traffic_light" tl="134860939"/>
+    <node id="1471286958" x="230.45" y="269.09" type="priority"/>
+    <node id="1494522757" x="1210.58" y="41.31" type="priority"/>
+    <node id="154259583" x="1445.56" y="183.25" type="priority"/>
+    <node id="154261501" x="1515.33" y="385.86" type="priority"/>
+    <node id="154261503" x="1529.11" y="413.60" type="priority"/>
+    <node id="154261507" x="1572.23" y="570.03" type="priority"/>
+    <node id="154261511" x="1576.27" y="675.58" type="priority"/>
+    <node id="1674584224" x="2118.66" y="640.43" type="priority"/>
+    <node id="1743357786" x="1808.69" y="637.83" type="priority"/>
+    <node id="1743357802" x="1940.13" y="682.17" type="priority"/>
+    <node id="1743357867" x="1851.27" y="736.84" type="priority"/>
+    <node id="1814941267" x="699.41" y="267.56" type="priority"/>
+    <node id="1856040754" x="458.23" y="638.87" type="right_before_left"/>
+    <node id="1858219476" x="882.00" y="462.47" type="priority"/>
+    <node id="1858237251" x="1151.29" y="345.04" type="priority"/>
+    <node id="1974412293" x="1569.50" y="205.09" type="priority"/>
+    <node id="1974412446" x="1579.47" y="316.12" type="priority"/>
+    <node id="1978341131" x="678.54" y="685.95" type="priority"/>
+    <node id="21448875" x="1745.85" y="146.47" type="priority"/>
+    <node id="2199386332" x="2110.75" y="315.21" type="priority"/>
+    <node id="2199386333" x="2041.41" y="302.86" type="priority"/>
+    <node id="2203290710" x="2132.05" y="750.68" type="priority"/>
+    <node id="2203290711" x="2132.53" y="730.83" type="priority"/>
+    <node id="2264405576" x="2157.75" y="267.51" type="priority"/>
+    <node id="2264405578" x="2119.61" y="259.97" type="priority"/>
+    <node id="2267964790" x="2185.62" y="629.90" type="priority"/>
+    <node id="2273589836" x="2153.59" y="200.36" type="priority"/>
+    <node id="2273589842" x="2129.41" y="195.90" type="priority"/>
+    <node id="2279089977" x="1306.47" y="821.34" type="priority"/>
+    <node id="2317665867" x="914.11" y="774.48" type="priority"/>
+    <node id="2317665868" x="854.60" y="721.93" type="priority"/>
+    <node id="2335517648" x="1433.21" y="24.61" type="dead_end"/>
+    <node id="2335517713" x="1770.82" y="439.51" type="priority"/>
+    <node id="2335517726" x="692.91" y="454.96" type="priority"/>
+    <node id="2335517749" x="1761.70" y="507.35" type="priority"/>
+    <node id="2351340236" x="275.69" y="362.37" type="priority"/>
+    <node id="2380714872" x="251.11" y="459.75" type="priority"/>
+    <node id="2380769891" x="284.20" y="701.26" type="priority"/>
+    <node id="2386604063" x="1454.03" y="291.00" type="priority"/>
+    <node id="2404233063" x="187.22" y="883.74" type="dead_end"/>
+    <node id="2404241703" x="240.81" y="351.29" type="priority"/>
+    <node id="248726136" x="630.15" y="288.83" type="priority"/>
+    <node id="248726140" x="577.87" y="345.63" type="priority"/>
+    <node id="248726570" x="909.85" y="434.90" type="priority"/>
+    <node id="248726571" x="996.00" y="349.50" type="priority"/>
+    <node id="248726576" x="1136.44" y="182.09" type="priority"/>
+    <node id="248726577" x="1180.46" y="213.63" type="priority"/>
+    <node id="248726582" x="1138.59" y="411.14" type="priority"/>
+    <node id="248726644" x="1025.59" y="626.95" type="priority"/>
+    <node id="248726770" x="947.33" y="522.43" type="priority"/>
+    <node id="248726771" x="983.99" y="519.55" type="priority"/>
+    <node id="248726773" x="1102.86" y="586.29" type="priority"/>
+    <node id="248726774" x="1090.12" y="610.46" type="priority"/>
+    <node id="248727077" x="832.54" y="512.53" type="priority"/>
+    <node id="248727704" x="1113.11" y="708.42" type="priority"/>
+    <node id="248727721" x="1102.40" y="807.49" type="priority"/>
+    <node id="248728415" x="652.64" y="676.36" type="priority"/>
+    <node id="248728416" x="767.18" y="830.13" type="dead_end"/>
+    <node id="248728920" x="325.17" y="893.97" type="priority"/>
+    <node id="248728927" x="416.62" y="726.76" type="priority"/>
+    <node id="248728928" x="367.93" y="718.62" type="priority"/>
+    <node id="248728929" x="374.99" y="802.82" type="priority"/>
+    <node id="248728931" x="375.78" y="887.76" type="priority"/>
+    <node id="248728934" x="358.92" y="617.99" type="priority"/>
+    <node id="248728938" x="521.42" y="763.57" type="priority"/>
+    <node id="248729665" x="815.00" y="743.00" type="priority"/>
+    <node id="248729693" x="1352.60" y="817.76" type="priority"/>
+    <node id="248729695" x="1482.50" y="808.62" type="priority"/>
+    <node id="248730521" x="1679.94" y="877.90" type="priority"/>
+    <node id="248730523" x="1698.12" y="770.60" type="priority"/>
+    <node id="248730532" x="2004.52" y="514.11" type="priority"/>
+    <node id="248730537" x="1817.43" y="509.40" type="priority"/>
+    <node id="248730541" x="2129.76" y="533.39" type="priority"/>
+    <node id="248730559" x="1900.82" y="510.56" type="priority"/>
+    <node id="248730564" x="1918.39" y="433.78" type="priority"/>
+    <node id="248730610" x="1838.43" y="319.28" type="priority"/>
+    <node id="248730614" x="1611.21" y="407.62" type="priority"/>
+    <node id="248730618" x="1817.53" y="448.54" type="priority"/>
+    <node id="248730622" x="1654.40" y="335.56" type="priority"/>
+    <node id="248730634" x="1859.07" y="173.02" type="priority"/>
+    <node id="248730638" x="2077.11" y="524.22" type="priority"/>
+    <node id="248730737" x="1697.72" y="655.12" type="priority"/>
+    <node id="248730740" x="1939.86" y="616.41" type="priority"/>
+    <node id="248730742" x="1999.55" y="550.58" type="priority"/>
+    <node id="248731777" x="1476.99" y="655.86" type="priority"/>
+    <node id="248731779" x="1179.87" y="624.72" type="priority"/>
+    <node id="248735809" x="1609.58" y="122.11" type="priority"/>
+    <node id="248735812" x="1156.17" y="316.18" type="priority"/>
+    <node id="248735840" x="1271.45" y="387.30" type="priority"/>
+    <node id="248735852" x="2291.70" y="642.71" type="dead_end"/>
+    <node id="248735885" x="1571.07" y="398.76" type="priority"/>
+    <node id="248736269" x="1709.85" y="311.20" type="priority"/>
+    <node id="248736293" x="880.11" y="741.83" type="traffic_light" tl="248736293"/>
+    <node id="248736323" x="2518.26" y="597.41" type="priority"/>
+    <node id="2488139573" x="208.23" y="332.34" type="dead_end"/>
+    <node id="249563293" x="1390.37" y="187.18" type="priority"/>
+    <node id="249664197" x="1814.36" y="747.74" type="priority"/>
+    <node id="249664921" x="1851.30" y="229.51" type="priority"/>
+    <node id="249676209" x="1955.38" y="928.39" type="priority"/>
+    <node id="249679818" x="889.11" y="906.25" type="priority"/>
+    <node id="249680326" x="637.92" y="774.19" type="priority"/>
+    <node id="249682772" x="378.86" y="693.99" type="priority"/>
+    <node id="254337785" x="1446.74" y="23.59" type="dead_end"/>
+    <node id="254337786" x="874.31" y="66.56" type="traffic_light" tl="254337786"/>
+    <node id="254337787" x="1.19" y="130.61" type="dead_end"/>
+    <node id="254372961" x="230.44" y="581.45" type="dead_end"/>
+    <node id="254397297" x="378.36" y="229.00" type="priority"/>
+    <node id="254397881" x="1293.57" y="507.46" type="priority"/>
+    <node id="254397983" x="1371.24" y="107.77" type="priority"/>
+    <node id="254398078" x="1349.58" y="190.32" type="priority"/>
+    <node id="256207130" x="947.82" y="784.18" type="priority"/>
+    <node id="256207131" x="932.75" y="873.15" type="priority"/>
+    <node id="256207134" x="1040.99" y="928.55" type="dead_end"/>
+    <node id="256207320" x="1784.23" y="852.00" type="priority"/>
+    <node id="256209948" x="1322.52" y="721.21" type="priority"/>
+    <node id="256209951" x="1261.03" y="744.75" type="priority"/>
+    <node id="256210252" x="1037.33" y="687.76" type="priority"/>
+    <node id="256210253" x="1030.20" y="796.13" type="priority"/>
+    <node id="256210258" x="1058.74" y="800.58" type="priority"/>
+    <node id="256210260" x="1035.15" y="729.81" type="priority"/>
+    <node id="256210419" x="1206.74" y="623.73" type="priority"/>
+    <node id="256210498" x="1468.00" y="652.85" type="priority"/>
+    <node id="256210609" x="1433.52" y="637.80" type="priority"/>
+    <node id="256210610" x="1478.20" y="569.54" type="priority"/>
+    <node id="256210630" x="1902.13" y="476.23" type="priority"/>
+    <node id="257684519" x="244.04" y="15.97" type="dead_end"/>
+    <node id="257715706" x="403.37" y="435.88" type="priority"/>
+    <node id="257715707" x="349.89" y="472.07" type="priority"/>
+    <node id="257715708" x="324.37" y="484.08" type="priority"/>
+    <node id="257716111" x="259.29" y="462.04" type="priority"/>
+    <node id="257716196" x="416.69" y="561.72" type="priority"/>
+    <node id="257716397" x="266.67" y="544.00" type="priority"/>
+    <node id="257716920" x="344.55" y="812.23" type="priority"/>
+    <node id="257718107" x="608.92" y="672.20" type="priority"/>
+    <node id="257718503" x="390.44" y="586.13" type="priority"/>
+    <node id="2584900996" x="1580.97" y="730.86" type="priority"/>
+    <node id="2584900997" x="1628.20" y="727.34" type="priority"/>
+    <node id="2606247721" x="1200.00" y="721.57" type="priority"/>
+    <node id="2690812692" x="786.27" y="541.25" type="priority"/>
+    <node id="272632798" x="2043.17" y="47.73" type="priority"/>
+    <node id="2846307731" x="574.23" y="768.45" type="priority"/>
+    <node id="2846307732" x="556.07" y="808.40" type="priority"/>
+    <node id="2848310872" x="1789.91" y="265.45" type="priority"/>
+    <node id="305707588" x="1594.47" y="822.30" type="priority"/>
+    <node id="3137668230" x="890.33" y="541.26" type="priority"/>
+    <node id="3137668233" x="891.68" y="529.46" type="priority"/>
+    <node id="31404735" x="0.00" y="112.74" type="dead_end"/>
+    <node id="31404743" x="873.17" y="49.54" type="dead_end"/>
+    <node id="3147010046" x="845.56" y="656.68" type="priority"/>
+    <node id="316172744" x="2148.46" y="73.89" type="dead_end"/>
+    <node id="316172758" x="2084.10" y="44.43" type="dead_end"/>
+    <node id="3288321379" x="704.14" y="597.64" type="priority"/>
+    <node id="3875075883" x="589.00" y="322.56" type="priority"/>
+    <node id="3875075885" x="595.99" y="319.64" type="priority"/>
+    <node id="3875082432" x="713.67" y="423.59" type="priority"/>
+    <node id="4153705585" x="526.73" y="640.95" type="priority"/>
+    <node id="4153707693" x="483.47" y="635.51" type="priority"/>
+    <node id="4178052022" x="485.38" y="825.21" type="priority"/>
+    <node id="479155080" x="752.00" y="373.75" type="priority"/>
+    <node id="5235101504" x="396.50" y="723.78" type="priority"/>
+    <node id="574821" x="1200.57" y="822.67" type="priority"/>
+    <node id="578689" x="1762.15" y="0.00" type="priority"/>
+    <node id="6279013373" x="1503.35" y="368.72" type="priority"/>
+    <node id="6279013988" x="1517.01" y="502.37" type="priority"/>
+    <node id="6291998706" x="829.37" y="489.42" type="priority"/>
+    <node id="647171119" x="254.11" y="858.17" type="priority"/>
+    <node id="6518812535" x="347.57" y="609.06" type="priority"/>
+    <node id="6635234331" x="1325.86" y="560.48" type="priority"/>
+    <node id="672078072" x="448.87" y="767.80" type="priority"/>
+    <node id="6908633261" x="189.31" y="352.58" type="dead_end"/>
+    <node id="708350914" x="1148.14" y="54.99" type="priority"/>
+    <node id="776142019" x="1201.81" y="662.79" type="priority"/>
+    <node id="8312197068" x="375.12" y="815.25" type="priority"/>
+    <node id="8312197072" x="362.88" y="814.38" type="priority"/>
+    <node id="9015383180" x="474.81" y="479.83" type="priority"/>
+    <node id="9084649635" x="2518.43" y="609.44" type="dead_end"/>
+    <node id="9088160156" x="883.20" y="763.00" type="priority"/>
+    <node id="9088160159" x="828.06" y="721.14" type="priority"/>
+    <node id="9088160178" x="813.90" y="691.34" type="priority"/>
+    <node id="932248390" x="604.10" y="851.23" type="priority"/>
+    <node id="932331536" x="846.69" y="679.00" type="priority"/>
+    <node id="955132974" x="1176.64" y="404.21" type="priority"/>
+    <node id="955132992" x="1183.56" y="441.66" type="priority"/>
+    <node id="955133013" x="1282.87" y="435.30" type="priority"/>
+    <node id="955133015" x="1380.07" y="431.63" type="priority"/>
+    <node id="965111149" x="443.90" y="266.84" type="priority"/>
+    <node id="965116777" x="367.33" y="180.45" type="priority"/>
+    <node id="965157852" x="660.52" y="506.20" type="priority"/>
+    <node id="965157878" x="566.74" y="444.99" type="priority"/>
+    <node id="973114571" x="283.52" y="707.32" type="priority"/>
+    <node id="979520403" x="1770.31" y="109.17" type="priority"/>
+    <node id="979528762" x="1709.29" y="282.68" type="priority"/>
+    <node id="9840683849" x="310.85" y="382.12" type="priority"/>
+    <node id="989077057" x="1397.45" y="346.72" type="priority"/>
+    <node id="989077067" x="1398.31" y="305.53" type="priority"/>
+    <node id="989084765" x="1616.90" y="158.60" type="priority"/>
+    <node id="989084770" x="1620.26" y="197.54" type="priority"/>
+    <node id="989084771" x="1622.95" y="228.20" type="priority"/>
+    <node id="989084782" x="1668.76" y="92.29" type="priority"/>
+    <node id="989084784" x="1663.58" y="156.86" type="priority"/>
+    <node id="989084827" x="1993.19" y="231.37" type="priority"/>
+    <node id="cluster_11360886932_11360886933_154261518_3288321448_#3more" x="1595.91" y="784.74" type="traffic_light" tl="cluster_11360886932_11360886933_154261518_3288321448_#3more"/>
+    <node id="cluster_129531825_9015383169_9015383177" x="486.69" y="479.33" type="traffic_light" tl="GS_cluster_129531825_9015383169_9015383177"/>
+    <node id="cluster_134860944_248726640_4069645191" x="845.50" y="536.18" type="traffic_light" tl="cluster_134860944_248726640_4069645191"/>
+    <node id="cluster_134860954_318820568" x="876.35" y="263.97" type="traffic_light" tl="GS_cluster_134860954_318820568"/>
+    <node id="cluster_1674584496_1674584513" x="1464.50" y="689.95" type="priority"/>
+    <node id="cluster_1858219470_479155100" x="844.16" y="385.22" type="priority"/>
+    <node id="cluster_21448874_248735845" x="1777.34" y="153.85" type="priority"/>
+    <node id="cluster_2400144428_31404736" x="240.57" y="104.39" type="traffic_light" tl="cluster_2400144428_31404736"/>
+    <node id="cluster_248726314_9088160137_9088160145_9088160146" x="693.71" y="612.45" type="traffic_light" tl="GS_cluster_248726314_9088160137_9088160145_9088160146"/>
+    <node id="cluster_248729711_9084649632_9084649633_9084649670" x="1982.77" y="715.47" type="traffic_light" tl="GS_cluster_248729711_9084649632_9084649633_9084649670"/>
+    <node id="cluster_248730549_9084649617_9084649618_9084649619" x="2126.62" y="683.78" type="priority"/>
+    <node id="cluster_248735817_248735841" x="1255.61" y="320.90" type="priority"/>
+    <node id="cluster_4997256427_9088160166_9088160167_9088160168" x="578.27" y="536.90" type="priority"/>
+    <node id="cluster_9015383178_9088160176_9088160177_9088160180" x="622.85" y="565.83" type="priority"/>
+</nodes>

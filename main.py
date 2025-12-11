@@ -66,7 +66,7 @@ if __name__ == "__main__":
                 }
         },
         "simulator_parameters": {
-            "network_name": "two_route_yield"
+            "network_name": "bucharest"
         },
         "plotter_parameters": {
             "phases": [0, human_learning_episodes],

@@ -37,7 +37,7 @@
 
     "simulator_parameters":
     {
-        "network_name" : "csomor",
+        "network_name" : "bucharest",
         "simulation_timesteps" : 180,
         "sumo_type" : "sumo",
 

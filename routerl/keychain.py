@@ -108,6 +108,7 @@ class Keychain:
     
     # Network names
     ARTERIAL = "arterial"
+    BUCHAREST = "bucharest"
     COLOGNE = "cologne"
     CSOMOR = "csomor"
     GRID = "grid"
@@ -116,7 +117,7 @@ class Keychain:
     ORTUZAR = "ortuzar"
     TWO_ROUTE_YIELD = "two_route_yield"
     MANHATTAN = "manhattan"
-    NETWORK_NAMES = [ARTERIAL, COLOGNE, CSOMOR, GRID, INGOLSTADT, NGUYEN, ORTUZAR, TWO_ROUTE_YIELD, MANHATTAN]
+    NETWORK_NAMES = [ARTERIAL,BUCHAREST, COLOGNE, CSOMOR, GRID, INGOLSTADT, NGUYEN, ORTUZAR, TWO_ROUTE_YIELD, MANHATTAN]
     
     ###########################################################
 
