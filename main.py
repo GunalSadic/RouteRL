@@ -8,6 +8,8 @@
 import sys
 import os
 from tqdm import tqdm
+import matplotlib
+matplotlib.rcParams['font.family'] = 'DejaVu Sans'
 
 import torch
 from tensordict.nn import TensorDictModule, TensorDictSequential
@@ -24,7 +26,8 @@ from torchrl.objectives import SoftUpdate, ValueEstimators, DQNLoss
 
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../')))
 
-from routerl import TrafficEnvironment
+from routerl.environment.environment import TrafficEnvironment
+
 
 if __name__ == "__main__":
     #### Define hyperparameters
@@ -56,13 +59,13 @@ if __name__ == "__main__":
     env_params = {
         "agent_parameters": {
             "num_agents": 100,
-            "new_machines_after_mutation": 10,
+            "new_machines_after_mutation": 50,
             "human_parameters": {
                 "model": "w_avg"
             },
             "machine_parameters":
                 {
-                    "behavior": "selfish",
+                    "behavior": "competitive",
                 }
         },
         "simulator_parameters": {
@@ -96,7 +99,7 @@ if __name__ == "__main__":
 
     env = TrafficEnvironment(seed=42, **env_params)
 
-    print("Number of total agents is: ", len(env.all_agents), "\n")
+    print("Number of tot agents is: ", len(env.all_agents), "\n")
     print("Number of human agents is: ", len(env.human_agents), "\n")
     print("Number of machine agents (autonomous vehicles) is: ", len(env.machine_agents), "\n")
 

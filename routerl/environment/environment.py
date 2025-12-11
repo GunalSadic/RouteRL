@@ -74,7 +74,7 @@ class TrafficEnvironment(AECEnv):
                 
                 - behavior (str, default="selfish"):
                     Route choice behavior.
-                    Options: ``selfish``, ``social``, ``altruistic``, ``malicious``, ``competitive``, ``collaborative``.
+                    Options: ``selfish``, ``social``, ``altruistic``, ``malicious``, ``competitive``, ``collaborative``,``eco_friendly``.
                     
                 - observed_span (int, default=300):
                     Time window considered for observations.
@@ -294,6 +294,16 @@ class TrafficEnvironment(AECEnv):
         self.agent_params = params[kc.AGENTS]
         self.plotter_params = params[kc.PLOTTER]
         self.path_gen_params = params[kc.PATH_GEN] if create_paths else None
+
+        # reroute interval in seconds (SUMO timesteps)
+        self.reroute_interval = getattr(self, "reroute_interval", None)
+        # fallback daca nu este setat în params: 30 secunde
+        if self.reroute_interval is None:
+            env_params = getattr(self, "environment_parameters", {}) or {}
+            self.reroute_interval = env_params.get("reroute_interval", 30)
+
+        # cache for candidate routes (filled lazily)
+        self._route_candidates = None
 
         self.travel_times_list = []
         self.day = 0
@@ -585,6 +595,14 @@ class TrafficEnvironment(AECEnv):
             self.episode_actions[agent.id] = action_dict
         timestep, arrivals = self.simulator.step()
 
+    # ---reroute for all machine agents already in SUMO ---
+        if self.reroute_interval and (timestep % self.reroute_interval == 0):
+            for agent in self.machine_agents:
+                try:
+                    self._maybe_reroute(agent)
+                except Exception as e:
+                    print(f"Reroute failed for agent {agent.id}: {e}")
+
         travel_times = dict()
         for veh_id in arrivals:
             agent_id = int(veh_id)
@@ -693,9 +711,14 @@ class TrafficEnvironment(AECEnv):
                             agent_action = True
 
             # If all machines that have start time as the simulator timestep acted
+           
+            # 1. Machine agents au acționat
             if not self.machine_same_start_time:
+
+                
                 travel_times = self._help_step(self.actions_timestep)
 
+                
                 for agent_dict in travel_times:
                     self.travel_times_list.append(agent_dict)
 
@@ -815,3 +838,94 @@ class TrafficEnvironment(AECEnv):
                                       self.agent_params)
         else:
             raise ValueError('[MODEL INVALID] Unrecognized observation type: ' + observation_type)
+
+
+    def _load_route_candidates(self):
+        """Returneaza lista de rute ca listă de liste de edge ids.
+        Citeste paths_csv_file_path din simulator  si parseaza coloana 'path'.
+        """
+        if self._route_candidates is not None:
+            return self._route_candidates
+
+        try:
+            import pandas as pd
+            csv_path = getattr(self.simulator, "paths_csv_file_path", None)
+            if csv_path and os.path.isfile(csv_path):
+                df = pd.read_csv(csv_path)
+                
+                routes = [str(p).split(" ") for p in df["path"].values]
+                # deduplicate and keep unique routes lists
+                uniq = []
+                for r in routes:
+                    if r not in uniq:
+                        uniq.append(r)
+                self._route_candidates = uniq
+                return self._route_candidates
+        except Exception:
+            # fallback gol
+            self._route_candidates = []
+            return self._route_candidates
+
+        # default empty
+        self._route_candidates = []
+        return self._route_candidates
+
+    def _maybe_reroute(self, agent):
+        import traci
+        from traci.exceptions import TraCIException
+
+        agent_id = str(agent.id)
+
+        # 1️ verific daca vehiculul exista in simulare
+        try:
+            if agent_id not in traci.vehicle.getIDList():
+                # vehiculul nu mai exista
+                return
+            current_edge = traci.vehicle.getRoadID(agent_id)
+        except TraCIException:
+            return
+
+        # 2️ incarc rutele candidate
+        candidates = self._load_route_candidates()
+        if not candidates:
+            return
+
+        # 3️ calculam costurile pentru fiecare ruta
+        route_costs = []
+        for route in candidates:
+            total_tt = 0
+            for edge in route:
+                try:
+                    tt = traci.edge.getTraveltime(edge)
+                    if tt is None:
+                        tt = 1e6
+                except TraCIException:
+                    tt = 1e6
+                total_tt += tt
+            route_costs.append((route, total_tt))
+
+        # 4️ alegem ruta cu cel mai mic cost
+        try:
+            best_route, best_cost = min(route_costs, key=lambda x: x[1])
+        except ValueError:
+            return
+
+        # 5️ verific compatibilitatea rutei cu edge-ul curent
+        if current_edge != best_route[0]:
+            if current_edge in best_route:
+                idx = best_route.index(current_edge)
+                best_route = best_route[idx:]  # ajustam ruta sa inceapa de la edge-ul curent
+            else:
+                # vehiculul nu poate accesa ruta  -> nu rerutam
+                print(f"Warning: Agent {agent.id} cannot be rerouted, no connection from {current_edge} to route {best_route}")
+                return
+
+        # 6️ setam ruta în SUMO
+        try:
+            traci.vehicle.setRoute(agent_id, best_route)
+            print(f"Agent {agent.id} rerouted to {best_route}")
+        except TraCIException as e:
+            print(f"Error: Failed to reroute agent {agent.id}: {e}")
+            return
+
+   
